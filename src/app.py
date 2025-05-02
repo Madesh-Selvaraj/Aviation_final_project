@@ -18,12 +18,12 @@ with tab1:
     st.header("Predict Flight Incident")
     col1, col2, col3 = st.columns(3)
     with col1:
-        origin = st.selectbox("Select Origin", data["ORIGIN"].unique())
+        origin = st.selectbox("Select Origin", data["origin"].unique())
     with col2:
-        destination = st.selectbox("Select Destination", data["DEST"].unique())
+        destination = st.selectbox("Select Destination", data["destination"].unique())
     with col3:
         dep_time = st.number_input("Departure Time (HHMM)", min_value=0, max_value=2359, value=700)
-    
+
     if st.button("Predict Incident"):
         prediction, prob = predict_incident(model, origin, destination, dep_time)
         st.success(f"Prediction: {'Incident' if prediction else 'No Incident'} (Probability: {prob:.2f})")
@@ -31,8 +31,8 @@ with tab1:
 # --- Model Performance ---
 with tab2:
     st.header("Model Performance")
-    y_true = data["INCIDENT"]
-    X = data[["ORIGIN", "DEST", "DEP_TIME"]]
+    y_true = data["incident"]
+    X = data[["origin", "destination", "departure_time"]]
     y_pred = model.predict(X)
     y_proba = model.predict_proba(X)[:, 1]
 

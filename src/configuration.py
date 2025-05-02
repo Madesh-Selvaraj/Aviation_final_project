@@ -7,6 +7,8 @@ RAW_DATA_DIRECTORY=f'{DATA_DIRECTORY}/raw'
 INTERIM_DATA_DIRECTORY=f'{DATA_DIRECTORY}/interim'
 PROCESSED_DATA_DIRECTORY=f'{DATA_DIRECTORY}/processed'
 MODEL_DIRECTORY=f'{WORKING_DIRECTORY}/models'
+MODEL_PATH = "/workspaces/Aviation_final_project/models/model.pkl"
+DATA_PATH = "/workspaces/Aviation_final_project/data/processed/combined_data.csv"
 
 # Data files
 RAW_INCIDENTS_MDB_FILE=f'{RAW_DATA_DIRECTORY}/avall.mdb'
